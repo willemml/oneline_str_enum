@@ -56,7 +56,7 @@ macro_rules! parseable_enum {
     };
 }
 
-#[allow(unused)]
+#[macro_export]
 macro_rules! ident_to_empty_string {
     ($type:ident) => {
         ""
