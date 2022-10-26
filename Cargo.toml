@@ -1,0 +1,11 @@
+[package]
+name = "oneline_str_enum"
+version = "0.1.0"
+edition = "2021"
+description = "Format and parse enums as strings with macros."
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+simple_string_lexer = "0.1.0"
