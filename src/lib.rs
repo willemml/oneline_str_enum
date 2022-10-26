@@ -6,6 +6,9 @@ pub enum Error {
     EmptyString,
 }
 
+#[allow(unused)]
+pub use simple_string_lexer;
+
 #[macro_export]
 macro_rules! parseable_enum {
     ($([$($attr:meta),*])? $name:ident, $($variant:ident$(($($param:ident: $type:ident),*))?)*) => {
@@ -18,7 +21,7 @@ macro_rules! parseable_enum {
 			type Err = $crate::Error;
 
 			fn from_str(s: &str) -> Result<Self, Self::Err> {
-				let lexed = simple_string_lexer::split_str(s);
+				let lexed = $crate::simple_string_lexer::split_str(s);
 				let mut split = lexed.iter();
 				if let Some(first) = split.next() {
 				match first.as_str() {
